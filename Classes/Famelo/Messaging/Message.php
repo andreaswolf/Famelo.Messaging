@@ -50,10 +50,10 @@ class Message extends \TYPO3\SwiftMailer\Message {
 
 	public function __construct($subject = null, $body = null,
 	                            $contentType = null, $charset = null) {
-		$this->setCharset('text/html');
-
 		parent::__construct($subject, $body, $contentType, $charset);
+		$this->setContentType($contentType != null ? $contentType : 'text/html');
 	}
+
 
 	public function setMessage($message) {
 		$parts = explode(':', $message);
