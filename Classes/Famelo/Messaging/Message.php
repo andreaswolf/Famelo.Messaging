@@ -73,7 +73,7 @@ class Message extends \TYPO3\SwiftMailer\Message {
 		}
 
 		$this->setBody($this->render(), $this->getContentType());
-		parent::send();
+		return parent::send();
 	}
 
 	public function render() {
